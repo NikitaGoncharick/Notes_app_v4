@@ -19,9 +19,19 @@ public class NoteBottomSheetFragment  extends BottomSheetDialogFragment {
     private EditText editNoteContent;
     private Button saveButton;
 
+    private Note currentNote;
+
+    public void setCurrentNote(Note note){
+        currentNote = note;
+    }
+
     public  View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 
         View view = inflater.inflate(R.layout.fragment_note_bottom_sheet, container, false); // подключили дизайн
+
+        if (currentNote!=null){
+            //editNoteTitle.setText();
+        }
 
         SharedViewModel sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class); // Получение SharedViewModel и запустили его деятельность
         //ViewModelProvider - шкаф с ящиками где каждый ящик представляет собой ViewModel

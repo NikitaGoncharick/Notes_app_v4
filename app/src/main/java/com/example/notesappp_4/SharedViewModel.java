@@ -11,7 +11,7 @@ public class SharedViewModel extends ViewModel {
     // MutableLiveData предоставляет удобный механизм для такого взаимодействия.
 
     public void setSelectedNote(Note note) {// Метод для получения данных, которые введет пользователь в заметке (установки в наши поля транспортировщика(set))
-        selectedNote.setValue(note);
+        selectedNote.setValue(note); // создание новой записи в LiveData "selectedNote"
     }
 
     public MutableLiveData<Note> getSelectedNote(){ // Получение LiveData, которая наблюдается MainActivity

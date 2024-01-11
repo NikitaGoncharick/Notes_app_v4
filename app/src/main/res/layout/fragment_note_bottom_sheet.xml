@@ -9,20 +9,22 @@
     <!-- Поле ввода для заголовка заметки -->
     <EditText
         android:id="@+id/edit_note_title"
-        android:layout_width="match_parent"
+        android:layout_width="100sp"
         android:layout_height="wrap_content"
-        android:hint="note_title"
+        android:hint="Title"
         android:inputType="text"/>
 
     <!-- Поле ввода для содержимого заметки -->
     <EditText
+        android:padding="15dp"
+        android:background="@drawable/bg_for_text"
         android:id="@+id/edit_note_content"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="note_content"
+        android:layout_height="90dp"
+        android:gravity="center|left"
+        android:hint="Your note:"
         android:inputType="textMultiLine"
-        android:gravity="top"
-        android:minHeight="200dp"/>
+        android:minHeight="200dp" />
 
     <!-- Кнопка для сохранения заметки -->
     <Button
