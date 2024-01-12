@@ -7,6 +7,14 @@ import androidx.room.PrimaryKey;
 //Таблица БД
 @Entity
 public class Note {
+    private boolean isMarkedForDeletion;
+    public boolean isMarkedForDeletion(){
+        return isMarkedForDeletion;
+    }
+    public void setMarkedForDeletion(boolean markedForDeletion){
+        isMarkedForDeletion = markedForDeletion;
+    }
+
     @PrimaryKey(autoGenerate = true)
     private int id;
     @ColumnInfo(name = "title")

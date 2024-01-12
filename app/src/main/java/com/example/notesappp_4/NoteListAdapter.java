@@ -61,12 +61,14 @@ public class NoteListAdapter extends RecyclerView.Adapter<NoteListAdapter.NoteVi
             super(itemView);
             noteItemView = itemView.findViewById(R.id.note_content);
             note_title = itemView.findViewById(R.id.note_title);
+
+            itemView.setOnClickListener(this); // !!! слушатель кликов для itemView (начало процесса обработки)
         }
 
         @Override
         public void onClick(View v) {
-            int position = getAdapterPosition();
-            onNoteClickListener.onNoteClick(position);  // получаем позицию по которой был клик
+            int position = getAdapterPosition(); // получили позицию элемента
+            onNoteClickListener.onNoteClick(position);  // передали int значение позиции в конструктор, который предварительно настроили на принтяие int значений
         }
     }
 

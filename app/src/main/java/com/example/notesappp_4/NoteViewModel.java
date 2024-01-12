@@ -39,7 +39,7 @@ public class NoteViewModel extends AndroidViewModel {
         NoteDatabase.databaseExecutor.execute(new Runnable() {
             @Override
             public void run() {
-                noteDao.delete(note);
+                noteDao.delete(note); //вызов метода Room Database для удаления заметки из базы данных
             }
         });
     }

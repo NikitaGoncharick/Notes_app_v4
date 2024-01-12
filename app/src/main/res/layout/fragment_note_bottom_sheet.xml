@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -8,30 +10,58 @@
 
     <!-- Поле ввода для заголовка заметки -->
     <EditText
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:background="@drawable/bg_for_text"
         android:id="@+id/edit_note_title"
-        android:layout_width="100sp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Title"
         android:inputType="text"/>
 
     <!-- Поле ввода для содержимого заметки -->
     <EditText
+        android:layout_marginTop="10dp"
         android:padding="15dp"
         android:background="@drawable/bg_for_text"
         android:id="@+id/edit_note_content"
         android:layout_width="match_parent"
-        android:layout_height="90dp"
+        android:layout_height="120dp"
         android:gravity="center|left"
         android:hint="Your note:"
         android:inputType="textMultiLine"
-        android:minHeight="200dp" />
+        android:minHeight="300dp" />
 
     <!-- Кнопка для сохранения заметки -->
-    <Button
-        android:id="@+id/button_save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="save"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:background="@drawable/button_back"
+            android:id="@+id/button_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="save"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            app:tint="@color/gray2"
+            android:layout_marginStart="10dp"
+            android:id="@+id/delete_note_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/trash_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>
